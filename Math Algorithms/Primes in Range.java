@@ -25,6 +25,7 @@ class PrimesInRange{
         if(primes[i] == true){
           System.out.print(i+" ");
         }
-   }
+      }
   
-}
+   }
+} 
