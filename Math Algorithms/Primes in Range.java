@@ -15,7 +15,7 @@ class PrimesInRange{
   
     public void main(String[] args){
       Scanner sc = new Scanner(System.in);
-      int number = sc.nextInt();
+      int n = sc.nextInt();
      
       boolean[] primes = new boolean[n+1];
       Arrays.fill(primes,true);
