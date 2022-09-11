@@ -10,6 +10,13 @@ void selectionSort(int[] arr){
     }
 }
 
+public void swap(int a , int b , int[] arr){
+    arr[a] ^= arr[b];
+    arr[b] ^= arr[a];
+    arr[a] ^= arr[b];
+}
+
+
 /*
 
 Time Complexity 
