@@ -18,4 +18,13 @@ void bucket(int a[], int n) // function to implement bucket sort
       bucket[i]--;  
     }  
   }  
+} 
+
+int getMax(int a[], int n) // function to get maximum element from the given array  
+{  
+  int max = a[0];  
+  for (int i = 1; i < n; i++)  
+    if (a[i] > max)  
+      max = a[i];  
+  return max;  
 }  
