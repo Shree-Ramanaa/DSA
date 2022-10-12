@@ -1,0 +1,24 @@
+class Solution {
+    public String shiftingLetters(String s, int[][] shifts) {
+        
+        int arr[] = new int[s.length()+1];
+        
+        for(int[] i:shifts){
+            int d = i[2];
+            
+            arr[i[0]] += d == 1 ? 1:-1;
+            arr[i[1]+1] -= d == 1 ? 1:-1;
+        }
+        
+        String ans = "";
+        int p = 0;
+        
+        for(int i = 0; i < s.length(); i+=1){
+            p += arr[i];
+            while(p<0)p+=26;
+            char c = (char)( (s.charAt(i) - 'a' + p) % 26 + 'a');
+            ans += c;
+        }
+        return ans;
+    }
+}
