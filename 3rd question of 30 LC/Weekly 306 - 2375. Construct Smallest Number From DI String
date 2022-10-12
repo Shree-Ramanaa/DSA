@@ -1,0 +1,25 @@
+class Solution {
+    public String smallestNumber(String pattern) {
+        StringBuilder s = new StringBuilder("");
+        int n = 1;
+        Stack<Character> st = new Stack();
+        
+        for(char i:pattern.toCharArray()){
+            if(i =='I'){
+                s.append(String.valueOf(n));
+                
+                if(!st.isEmpty()){
+                    while(!st.isEmpty())s.append(st.pop());
+                }
+            }
+            else if(i =='D'){
+                st.push((char)(n+48));
+            }
+            n+=1;
+        }
+        s.append(String.valueOf(n));
+        
+        while(!st.isEmpty())s.append(st.pop());
+        return s.toString();
+    }
+}
