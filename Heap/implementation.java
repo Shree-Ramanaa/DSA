@@ -50,13 +50,21 @@ public class MaxHeap
     private void heapify(int pos){
         if(pos > size/2 || pos > size)return;
         
-        if(maxHeap[pos]<maxHeap[positionOfLeftChild(pos)]){
+        if(maxHeap[pos]<maxHeap[positionOfRightChild(pos)] || maxHeap[pos]<maxHeap[positionOfLeftChild(pos)]){
+            if(maxHeap[positionOfLeftChild(pos)]>maxHeap[positionOfRightChild(pos)]){
             swap(pos,positionOfLeftChild(pos));
             heapify(positionOfLeftChild(pos));
-        }
-        else if(maxHeap[pos]<maxHeap[positionOfRightChild(pos)]){
+            }
+            else{
             swap(pos,positionOfRightChild(pos));
             heapify(positionOfRightChild(pos));
+            }
+        }    
+    }
+    
+    public void buildHeap(){
+        for(int i=size/2; i>=1; i--){
+            heapify(i);
         }
     }
     
